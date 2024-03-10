@@ -1,0 +1,115 @@
+//HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS.css">
+</head>
+<body>
+<div>
+    <p>  <img class="lock-icon" src="https://th.bing.com/th/id/OIP.WZ1kBdmBjmcf7lkrJFTr4QHaKh?rs=1&pid=ImgDetMain" alt="Clock" height="15px" weidth="15px"> Register</p>
+</div>
+
+<div class="container">
+    <h4  style="margin-left:20px ;">PERSONAL DETAILS</h4>
+    <div style="margin-left:20px ;">
+        <div class="Firstname">
+            <img src="https://banner2.cleanpng.com/20190504/irf/kisspng-computer-icons-portable-network-graphics-user-prof-avatar-people-social-user-profile-icon-5ccd663d0e0c99.6819973515569649250576.jpg" 
+                 alt="Firstname" width="20px" height="15px">
+            <label for="firstname"> First name:</label><br />
+            <input type="text" id="firstname" name="firstname" placeholder="First name" style="width: 200px; height: 25px;border-radius: 5px;">
+        </div>
+        <div class="Firstname">
+            
+            <label for="Lastname">Last name:</label><br />
+            <input type="text" id="Lastname" name="Last name" placeholder="Last name" style="width: 200px; height: 25px;border-radius: 5px;">
+        </div>
+    </div>
+
+    <div style="margin-left:20px ; margin-top: 10px;">
+        <div class="Firstname">
+            <img src="https://th.bing.com/th/id/R.ee9ea16556022dd4fe2c70099e2d8539?rik=6A%2bS4lf3X8EJ7Q&pid=ImgRaw&r=0"
+                 alt="Address" width="20px" height="15px">
+            <label for="Address"> Address:</label><br />
+            
+            <textarea name="Address" id="Address" cols="25" rows="7" style=""></textarea>
+        </div>
+        <div class="Firstname">
+            <img src="https://png.pngtree.com/png-vector/20191115/ourlarge/pngtree-empty-white-flag-developing-in-the-wind-mockup-png-image_1980987.jpg" alt="" style="height: 15px; width: 20px;border-radius: 5px;">
+            <label for="Country">Country</label><br>
+            
+            <select name="country" id="Country" style="width: 213px; height: 29px;border-radius: 5px;">
+              <option value="">Select Country</option>
+            </select>
+            <br>
+            
+            <br>
+            
+            <img src="https://th.bing.com/th/id/OIP.9DJaIiLN0DwT8OuphJGuiwHaHa?rs=1&pid=ImgDetMain" alt="email" style="height: 15px; width: 20px;">
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" style="width:200px ; height: 25px;border-radius: 5px;" placeholder = " example@gmail.com">
+            <br>
+            <br>
+
+
+        </div>
+        <br>
+        <br>
+        <div>
+            <div class="Firstname">
+                <img src="https://th.bing.com/th/id/OIP.WZ1kBdmBjmcf7lkrJFTr4QHaKh?rs=1&pid=ImgDetMain" alt="Password" height="15px" weidth="15px"> 
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" placeholder="Password" style="width: 200px; height: 25px;border-radius: 5px;">
+                
+            </div>
+            <div class="Firstname">
+                <img src="https://th.bing.com/th/id/OIP.QQb1L2ES5kdnT7moLj_lNQAAAA?rs=1&pid=ImgDetMain" alt="ConfirmPassword" height="15px" weidth="15px">
+                <label for="ConfirmPassword">Confirm Password</label><br><input type="password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password" style="width: 200px; height: 25px;border-radius: 5px;"></label>
+            </div>
+        </div>
+        <br>
+        <div>
+            <div class="Firstname">
+                <img src="https://th.bing.com/th/id/OIP.RcsTtOFw4xLttL-byVwxVwHaHa?pid=ImgDet&w=200&h=200&c=7&dpr=1.1" alt="" height="15px" weidth="15px">
+                <label for="Pincode">Pincode</label> <br>
+                <input type="text" id="Pincode" name="Pincode" style="width: 200px; height: 25px;border-radius: 5px;">
+
+            </div>
+            <div class="Firstname">
+                <img src="https://img.lovepik.com/element/40148/6772.png_860.png" alt="" width="20px" height="15px">
+                <label for="Contact">Contact Number</label> <br>
+                <input type="text" id="Contact" name="Contact" style="width: 200px; height: 25px; border-radius: 5px;">
+
+            </div>
+        </div>
+
+
+        
+    
+
+
+    </div>    
+</div>
+
+
+
+</body>
+</html>
+//CSS
+.Firstname {
+  display: inline-block;
+  margin-right: 50px; /* Khoảng cách giữa hai ô trống */
+}
+.lock-icon {
+  
+  margin-left: 800px;
+}
+.container {
+  margin-top: 10px; 
+  margin-left: 30 px; /* Lề trái */
+  border-top : 2px solid #ccc; /* Viền nhạt phía trên */
+  border-left : 2px solid #ccc; /* Viền nhạt phía trái */
+}
+  
