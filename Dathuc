@@ -1,0 +1,123 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+struct DONTHUC{
+	int somu;
+	double heso;
+	
+	DONTHUC(double _heso = 0,int _somu=0){
+		heso = _heso;
+		somu  = _somu;
+	}
+	
+	DONTHUC& operator = (const DONTHUC &rhs){
+		if (this == &rhs) return *this;
+		this->heso = rhs.heso;
+		this->somu = rhs.somu;
+		return *this;
+	}
+};
+
+
+struct Node{
+	DONTHUC* data;
+	Node* next;
+	
+	Node(DONTHUC* _data = nullptr){
+		this->data = _data;
+		this->next = nullptr;
+	}
+	
+};
+
+struct DATHUC{
+	Node* head;
+	Node* tail;
+	DATHUC(){
+		this->head = nullptr;
+		this->tail = nullptr;
+	}
+};
+void Nhap(DATHUC& B, double heso, int somu) {
+    DONTHUC* newDonThuc = new DONTHUC(heso, somu);
+    Node* newNode = new Node(newDonThuc);
+    if (B.head == nullptr) {
+        B.head = newNode;
+        B.tail = newNode;
+    } else {
+        B.tail->next = newNode;
+        B.tail = newNode;
+    }
+}
+
+void Xuat(const DATHUC& B) {
+    string bieuthuc = "";
+    Node* current = B.head;
+    while (current) {
+        if (current->data->heso == 0) {
+            current = current->next;
+            continue;
+        }
+        if (current->data->heso > 0 && !bieuthuc.empty()) {
+            bieuthuc += "+";
+        }
+        if (current->data->heso < 0 ) {
+            bieuthuc += "-";
+        }
+        if ((abs(current->data->heso)==1) && (current->data->somu==0)){
+            bieuthuc+="1";
+            current = current->next;
+            continue;
+            
+        }
+        
+        if (abs(current->data->heso)!=1){
+            bieuthuc+=to_string(((abs(current->data->heso))));
+        }
+        if (current->data->somu==1){
+            bieuthuc+="x";
+        }
+        if (current->data->somu < 0|| current->data->somu > 1){
+            bieuthuc+="x^"+to_string((current->data->somu));
+        }
+        
+        current = current->next;
+    }
+    cout << bieuthuc;
+    if (bieuthuc.empty()){
+        cout<<0;
+    }
+}
+
+
+double TinhDaThuc(const DATHUC& B, double x) {
+    double result = 0;
+    Node* current = B.head;
+    while (current) {
+        result += current->data->heso * pow(x, current->data->somu);
+        current = current->next;
+    }
+    return result;
+}
+
+
+int main() {
+    DATHUC B;
+    int N;
+    
+    cin >> N;
+    for (int test = 0; test < N; test++){
+		double heso; int somu;
+		cin >> heso >> somu;
+		Nhap(B,heso,somu);
+    }
+    
+    
+    cout << "Da thuc vua nhap la: "; Xuat(B);
+    double x; cin >> x;
+    cout << "\nVoi x=" << x << ", gia tri da thuc la: "
+         << setprecision(2) << fixed << TinhDaThuc(B, x);
+    return 0;
+}
+
